@@ -1,0 +1,14 @@
+<div class="container margin-top">
+  <div class="row">
+    <% @restaurants.each do |restaurant| %>
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        <%= link_to restaurant_path(restaurant) do %>
+          <h3><%= restaurant.name %> - <%= restaurant.category.capitalize %></h3>
+        <% end %>
+        <p><%= restaurant.address %></p>
+        <p> <%= restaurant.phone_number %></p>
+        <p><%= link_to "Add a Review", new_restaurant_review_path(restaurant) %></p>
+      </div>
+    <% end %>
+  </div>
+</div>
